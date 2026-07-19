@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Primary SEO Meta Tags -->
-    <meta name="description" content="داکتر خاطره حبیب ولی، بهترین داکتر جلدی در کابل افغانستان. متخصص امراض پوست، مو و زیبایی با بیش از ۱۰ سال تجربه بالینی و نشریات علمی بین‌المللی (PubMed, Wiley, Springer). رزرو نوبت آنلاین از طریق واتس‌اپ.">
+    <meta name="description" content="داکتر خاطره حبیب ولی، داکتر طب و متخصص امراض جلدی در کابل افغانستان. استاد پوهنتون طبی کابل و عضو دیپارتمنت جلدی و زهروی شفاخانه تدریسی میوند. بیش از ۱۰ سال تجربه بالینی و نشریات علمی بین‌المللی (PubMed, Wiley, Springer). رزرو نوبت آنلاین از طریق واتس‌اپ.">
     <meta name="keywords" content="بهترین داکتر جلدی در کابل, داکتر خاطره حبیب ولی, متخصص امراض جلدی افغانستان, درماتولوژیست کابل, درمان پوست و مو, کلینیک جلدی کابل, dermatologist kabul, skin doctor afghanistan">
     <meta name="author" content="Dr. Khatera Habib Wali">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
@@ -234,11 +234,18 @@
         /* ===== HERO SECTION ===== */
         .hero {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent-warm) 50%, var(--accent) 100%);
+            background-size: 200% 200%;
+            animation: heroGradient 8s ease infinite;
             color: var(--white);
             padding: 7rem 2rem 9rem;
             text-align: center;
             position: relative;
             overflow: hidden;
+        }
+
+        @keyframes heroGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         .hero::before {
@@ -250,6 +257,12 @@
                 radial-gradient(circle at 85% 20%, rgba(255,255,255,0.08) 0%, transparent 40%),
                 radial-gradient(circle at 50% 80%, rgba(0,180,216,0.15) 0%, transparent 50%);
             pointer-events: none;
+            animation: heroParticles 6s ease-in-out infinite;
+        }
+
+        @keyframes heroParticles {
+            0%, 100% { opacity: 0.8; transform: translateY(0); }
+            50% { opacity: 1; transform: translateY(-10px); }
         }
 
         .hero::after {
@@ -323,14 +336,31 @@
             text-decoration: none;
             font-weight: 700;
             font-size: 1.05rem;
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             box-shadow: 0 4px 24px rgba(0,0,0,0.12);
             border: 2px solid var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn:hover::before {
+            left: 100%;
         }
 
         .btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.18);
         }
 
         .btn:active {
@@ -554,16 +584,32 @@
             background: #f0f4f8;
         }
 
+        .service-image-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(15, 76, 129, 0.15) 0%, rgba(0, 180, 216, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+        }
+
+        .service-card:hover .service-image-wrapper::after {
+            opacity: 1;
+        }
+
         .service-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center top;
-            transition: transform 0.5s ease;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), filter 0.4s ease;
+            filter: saturate(0.9) brightness(1.02);
         }
 
         .service-card:hover .service-image {
-            transform: scale(1.05);
+            transform: scale(1.08);
+            filter: saturate(1.1) brightness(1.05) contrast(1.02);
         }
 
         .service-content {
@@ -602,6 +648,8 @@
         /* ===== TESTIMONIALS SECTION ===== */
         .testimonials-section {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background-size: 200% 200%;
+            animation: testimonialGradient 10s ease infinite;
             color: var(--white);
             padding: 6rem 2rem;
             max-width: 100%;
@@ -609,14 +657,25 @@
             overflow: hidden;
         }
 
+        @keyframes testimonialGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
         .testimonials-section::before {
             content: '';
             position: absolute;
             inset: 0;
             background: 
-                radial-gradient(circle at 10% 90%, rgba(0,180,216,0.15) 0%, transparent 40%),
-                radial-gradient(circle at 90% 10%, rgba(255,255,255,0.05) 0%, transparent 40%);
+                radial-gradient(circle at 10% 90%, rgba(0,180,216,0.2) 0%, transparent 40%),
+                radial-gradient(circle at 90% 10%, rgba(255,255,255,0.08) 0%, transparent 40%);
             pointer-events: none;
+            animation: testimonialParticles 8s ease-in-out infinite;
+        }
+
+        @keyframes testimonialParticles {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
         }
 
         .testimonials-section .section-header h2 {
@@ -647,13 +706,30 @@
             padding: 2.5rem;
             border-radius: var(--border-radius-lg);
             border: 1px solid rgba(255,255,255,0.15);
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .testimonial-card:hover::before {
+            left: 100%;
         }
 
         .testimonial-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255,255,255,0.15);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255,255,255,0.18);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.25);
         }
 
         .testimonial-stars {
@@ -961,6 +1037,7 @@
 
         .form-submit {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            background-size: 200% 200%;
             color: white;
             border: none;
             width: 100%;
@@ -970,9 +1047,15 @@
             font-weight: 700;
             font-family: inherit;
             cursor: pointer;
-            transition: var(--transition);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
             position: relative;
             overflow: hidden;
+            animation: buttonGradient 4s ease infinite;
+        }
+
+        @keyframes buttonGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
 
         .form-submit::before {
@@ -981,21 +1064,16 @@
             inset: 0;
             background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
             opacity: 0;
-            transition: opacity 0.3s;
+            transition: opacity 0.4s ease;
         }
 
         .form-submit:hover::before {
             opacity: 1;
         }
 
-        .form-submit span {
-            position: relative;
-            z-index: 1;
-        }
-
         .form-submit:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 12px 30px rgba(15, 76, 129, 0.35);
+            transform: translateY(-3px) scale(1.02); 
+            box-shadow: 0 12px 36px rgba(15, 76, 129, 0.4);
         }
 
         /* ===== FOOTER ===== */
@@ -1046,7 +1124,7 @@
             z-index: 998;
             transition: var(--transition);
             text-decoration: none;
-            animation: pulse-green 2s infinite;
+            animation: pulse-green 2s infinite, float-wa 3s ease-in-out infinite;
         }
 
         [dir="ltr"] .floating-wa { 
@@ -1055,13 +1133,22 @@
         }
 
         .floating-wa:hover { 
-            transform: scale(1.12);
-            box-shadow: 0 8px 32px rgba(37, 211, 102, 0.55);
+            transform: scale(1.15) translateY(-5px);
+            box-shadow: 0 12px 40px rgba(37, 211, 102, 0.6);
         }
 
         @keyframes pulse-green {
             0%, 100% { box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45); }
-            50% { box-shadow: 0 6px 32px rgba(37, 211, 102, 0.65); }
+            50% { box-shadow: 0 6px 40px rgba(37, 211, 102, 0.7); }
+        }
+
+        @keyframes float-wa {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .floating-wa:hover {
+            animation: none;
         }
 
         /* ===== ANIMATIONS ===== */
@@ -1151,14 +1238,53 @@
 
         /* Stats counter animation */
         .stat-item h3 {
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, color 0.3s ease;
+            position: relative;
         }
 
         .stat-item:hover h3 {
-            transform: scale(1.1);
+            transform: scale(1.15);
+            color: var(--accent);
+        }
+
+        .stat-item {
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
         }
 
         /* Service card hover glow */
+        .service-card {
+            position: relative;
+            background: var(--white);
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: 22px;
+            background: linear-gradient(135deg, var(--accent), var(--primary), var(--accent));
+            background-size: 200% 200%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
         .service-card::after {
             content: '';
             position: absolute;
@@ -1172,10 +1298,6 @@
 
         .service-card:hover::after {
             opacity: 1;
-        }
-
-        .service-card {
-            position: relative;
         }
 
         /* Credential list item animation */
@@ -1564,6 +1686,8 @@
       "hasCredential": [
         "MD",
         "Dermatology Specialist",
+        "Professor, Kabul Medical University",
+        "Department of Dermatology & Venereology, Maiwand Teaching Hospital",
         "International Researcher - PubMed, Wiley, Springer"
       ],
       "sameAs": [
@@ -1711,19 +1835,19 @@
                     <ul class="credentials-list fade-in-left">
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span data-i18n="cred_1">متخصص امراض جلدی و زیبایی</span>
+                            <span data-i18n="cred_1">داکتر طب، متخصص امراض جلدی</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span data-i18n="cred_2">پژوهشگر و نویسنده مقالات بین‌المللی</span>
+                            <span data-i18n="cred_2">استاد پوهنتون طبی کابل</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span data-i18n="cred_3">عضو شبکه‌های علمی جهانی (ResearchGate)</span>
+                            <span data-i18n="cred_3">دیپارتمنت جلدی و زهروی، شفاخانه تدریسی میوند</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                            <span data-i18n="cred_4">استفاده از پروتکل‌های درمانی روز دنیا</span>
+                            <span data-i18n="cred_4">پژوهشگر و نویسنده مقالات بین‌المللی</span>
                         </li>
                     </ul>
                 </div>
@@ -1981,7 +2105,7 @@
             fa: {
                 logo_text: "داکتر خاطره حبیب ولی",
                 nav_about: "درباره داکتر", nav_services: "خدمات تخصصی", nav_testimonials: "نظرات بیماران", nav_publications: "مقالات علمی", nav_contact: "تماس و نوبت‌دهی",
-                hero_badge: "متخصص امراض پوست، مو و زیبایی", hero_title: "بهترین داکتر جلدی در کابل",
+                hero_badge: "متخصص امراض پوست، مو و زیبایی | استاد پوهنتون طبی کابل | شفاخانه تدریسی میوند", hero_title: "بهترین داکتر جلدی در کابل",
                 hero_desc: "ارائه خدمات درمانی و مراقبت‌های پوستی بر پایه جدیدترین متدهای علمی جهانی، با تکیه بر سال‌ها تجربه بالینی و سوابق درخشان پژوهشی بین‌المللی.",
                 hero_btn: "رزرو نوبت مشاوره", hero_wa: "واتس‌اپ",
                 stat_1_val: "+۱۰", stat_1_desc: "سال تجربه تخصصی بالینی", stat_2_val: "+۱۵", stat_2_desc: "مقاله و نشریه علمی بین‌المللی",
@@ -1989,7 +2113,7 @@
                 about_title: "درباره داکتر خاطره حبیب ولی", about_subtitle: "پیشرو در درماتولوژی افغانستان",
                 about_p1: "داکتر خاطره حبیب ولی با سال‌ها تجربه در زمینه تشخیص و درمان امراض جلدی، یکی از پیشروترین متخصصین درماتولوژی در کابل، افغانستان است. رویکرد ایشان ترکیبی از دقت بالینی و جدیدترین دستاوردهای علمی جهانی است.",
                 about_p2: "ایشان علاوه بر فعالیت گسترده کلینیکی، به عنوان یک چهره پژوهشی شناخته می‌شوند و مقالات متعددی در پایگاه‌های داده معتبر جهانی مانند <strong>PubMed</strong>، <strong>Springer Nature</strong> و <strong>Wiley</strong> به ثبت رسانده‌اند. این سوابق علمی تضمین می‌کند که هر بیمار، درمانی مبتنی بر شواهد علمی دریافت می‌کند.",
-                cred_1: "متخصص امراض جلدی و زیبایی", cred_2: "پژوهشگر و نویسنده مقالات بین‌المللی", cred_3: "عضو شبکه‌های علمی جهانی (ResearchGate)", cred_4: "استفاده از پروتکل‌های درمانی روز دنیا",
+                cred_1: "داکتر طب، متخصص امراض جلدی", cred_2: "استاد پوهنتون طبی کابل", cred_3: "دیپارتمنت جلدی و زهروی، شفاخانه تدریسی میوند", cred_4: "پژوهشگر و نویسنده مقالات بین‌المللی",
                 services_title: "خدمات تخصصی کلینیک", services_desc: "ارائه راهکارهای درمانی جامع برای تمامی مشکلات پوست، مو و ناخن با بالاترین استانداردهای صحی.",
                 serv_1_title: "درمان بیماری‌های پوستی", serv_1_desc: "تشخیص دقیق و درمان علمی اگزما، پسوریازیس، آکنه شدید، عفونت‌های قارچی و سایر امراض شایع جلدی با داروهای استاندارد جهانی.",
                 serv_2_title: "مراقبت و زیبایی پوست", serv_2_desc: "مشاوره تخصصی برای جوان‌سازی، درمان لک و تیرگی، و ارائه روتین‌های مراقبتی شخصی‌سازی شده بر اساس نوع پوست شما.",
@@ -2018,7 +2142,7 @@
             ps: {
                 logo_text: "داکتر خاطره حبیب ولی",
                 nav_about: "د ډاکټرې په اړه", nav_services: "تخصصي خدمات", nav_testimonials: "د ناروغانو نظرونه", nav_publications: "علمي مقالې", nav_contact: "اړیکه او د وخت اخیستنه",
-                hero_badge: "د پوستکي، ویښتانو او ښکلا متخصصه", hero_title: "په کابل کې غوره پوستکي ډاکټره",
+                hero_badge: "د پوستکي، ویښتانو او ښکلا متخصصه | د کابل طبي پوهنتون استاد | شفاخانه تدریسی میوند", hero_title: "په کابل کې غوره پوستکي ډاکټره",
                 hero_desc: "د نړیوالو علمي میتودونو پر بنسټ د پوستکي درملنه او پاملرنه، د کلینیکي تجربې او نړیوالو څیړنیزو سوابقو پر بنسټ.",
                 hero_btn: "د مشورې لپاره د وخت اخیستنه", hero_wa: "واس اپ",
                 stat_1_val: "+۱۰", stat_1_desc: "کاله تخصصي کلینیکي تجربه", stat_2_val: "+۱۵", stat_2_desc: "نړیوالې علمي مقالې او خپرونې",
@@ -2026,7 +2150,7 @@
                 about_title: "د ډاکرې خاتره حبیب ولي په اړه", about_subtitle: "په افغانستان کې د ډرماټولوژي مخکښه",
                 about_p1: "ډاکټره خاتره حبیب ولي د پوستکي د ناروغیو د تشخیص او درملنې په برخه کې د کلونو تجربې سره، په کابل، افغانستان کې یوه له مخکښو رماټولوژیست څخه ده. د هغې تګلاره د کلینیکي دقت او نړیوالو علمي لاسته راوړنو ترکیب دی.",
                 about_p2: "هغه د پراخه کلینیکي فعالیت سربیره، د یوې څیړنیزې څیرې په توګه پیژندل کیږي او په PubMed، Springer Nature او Wiley کې یې ګڼې مقالې ثبت کړي دي. دا علمي سوابق تضمینوي چې هر ناروغ د علمي شواهدو پر بنسټ درملنه ترلاسه کوي.",
-                cred_1: "د پوستکي او ښکلا ناروغیو متخصصه", cred_2: "څیړونکې او د نړیوالو مقالو لیکواله", cred_3: "د نړیوالو علمي شبکو غړې (ResearchGate)", cred_4: "د نړۍ د ورنیو درملنیزو پروتوکولونو کارول",
+                cred_1: "ډاکټر طب، د پوستکي ناروغیو متخصص", cred_2: "د کابل طبي پوهنتون استاد", cred_3: "د جلدی او زهروی دیپارتمنت، شفاخانه تدریسی میوند", cred_4: "څیړونکې او د نړیوالو مقالو لیکواله",
                 services_title: "د کلینیک تخصصي خدمات", services_desc: "د پوستکي، ویښتانو او ناخنونو د ټولو ستونزو لپاره د لوړو روغتیایی معیارونو سره سم جامع درملنیز حل لارې.",
                 serv_1_title: "د پوستکي ناروغیو درملنه", serv_1_desc: "د اګزیما، پسوریاسیس، شدید اکني، فنګسي انتاناتو او نورو عامو پوستکي ناروغیو دقیق تشخیص او علمي درملنه.",
                 serv_2_title: "د پوستکي پاملرنه او ښکلا", serv_2_desc: "د ځوان ساتلو، د داغونو او تیاره کیدو درملنې، او ستاسو د پوستکي ډول ته د شخصي شوي پاملرنې روتینونو وړاندې کول.",
@@ -2055,7 +2179,7 @@
             en: {
                 logo_text: "Dr. Khatera Habib Wali",
                 nav_about: "About", nav_services: "Services", nav_testimonials: "Reviews", nav_publications: "Publications", nav_contact: "Contact",
-                hero_badge: "Dermatologist | Skin, Hair & Beauty Specialist", hero_title: "Best Dermatologist in Kabul, Afghanistan",
+                hero_badge: "Medical Doctor, Dermatologist | Professor, Kabul Medical University | Maiwand Teaching Hospital", hero_title: "Best Dermatologist in Kabul, Afghanistan",
                 hero_desc: "Evidence-based dermatological treatments and skincare using the latest global scientific methods. Backed by years of clinical experience and international research publications in PubMed, Wiley, and Springer.",
                 hero_btn: "Book Consultation", hero_wa: "WhatsApp",
                 stat_1_val: "+10", stat_1_desc: "Years Clinical Experience", stat_2_val: "+15", stat_2_desc: "International Publications",
@@ -2063,7 +2187,7 @@
                 about_title: "About Dr. Khatera Habib Wali", about_subtitle: "Pioneer in Afghan Dermatology",
                 about_p1: "Dr. Khatera Habib Wali is one of the leading dermatologists in Kabul, Afghanistan, with extensive experience in diagnosing and treating skin diseases. Her approach combines clinical precision with the latest global scientific advancements.",
                 about_p2: "In addition to extensive clinical practice, she is a recognized researcher with multiple publications in prestigious global databases such as <strong>PubMed</strong>, <strong>Springer Nature</strong>, and <strong>Wiley</strong>. This scientific background ensures every patient receives evidence-based treatment.",
-                cred_1: "Specialist in Skin & Aesthetic Diseases", cred_2: "International Researcher & Author", cred_3: "Member of Global Scientific Networks (ResearchGate)", cred_4: "Up-to-Date Global Treatment Protocols",
+                cred_1: "Medical Doctor, Dermatology Specialist", cred_2: "Professor at Kabul Medical University", cred_3: "Department of Dermatology & Venereology, Maiwand Teaching Hospital", cred_4: "International Researcher & Author",
                 services_title: "Specialized Clinic Services", services_desc: "Comprehensive treatment solutions for all skin, hair, and nail problems with the highest health standards.",
                 serv_1_title: "Skin Disease Treatment", serv_1_desc: "Accurate diagnosis and scientific treatment of eczema, psoriasis, severe acne, fungal infections, and other common skin conditions using global standard medications.",
                 serv_2_title: "Skincare & Aesthetics", serv_2_desc: "Specialized consultation for skin rejuvenation, hyperpigmentation treatment, and personalized skincare routines based on your skin type.",
