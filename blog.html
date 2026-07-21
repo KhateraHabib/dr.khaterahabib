@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermatology Blog Kabul | Skin Care Tips | Dr. Khatera Habib Wali | بلاگ پوست کابل</title>
+    <meta name="description" content="Expert dermatology blog by Dr. Khatera Habib Wali. Learn about skin care tips, acne treatment, hair loss prevention, psoriasis management, and skin health in Kabul, Afghanistan.">
+    <meta name="keywords" content="dermatology blog Kabul, skin care tips Afghanistan, acne treatment tips, hair loss prevention, psoriasis management, اگزما, پسوریازیس, ریزش مو, درمان پوست">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://khaterahabib.github.io/dr.khaterahabib/blog.html">
+    <meta property="og:title" content="Dermatology Blog | Dr. Khatera Habib Wali Kabul">
+    <meta property="og:description" content="Expert skin care advice from Afghanistan's leading dermatologist. Tips on acne, hair loss, psoriasis, and more.">
+    <meta property="og:url" content="https://khaterahabib.github.io/dr.khaterahabib/blog.html">
+    <meta property="og:type" content="blog">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f4c81;
+            --primary-dark: #0a355c;
+            --accent: #00b4d8;
+            --accent-light: #90e0ef;
+            --bg-light: #f0f7ff;
+            --bg-warm: #f8fafc;
+            --text-dark: #1e293b;
+            --text-light: #475569;
+            --white: #ffffff;
+            --shadow: 0 10px 40px rgba(15, 76, 129, 0.08);
+            --border-radius: 16px;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Vazirmatn', 'Noto Sans', sans-serif;
+            line-height: 1.9;
+            color: var(--text-dark);
+            background: var(--bg-warm);
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        .page-header h1 { font-size: 2.2rem; margin-bottom: 12px; font-weight: 900; }
+        .page-header p { font-size: 1.1rem; opacity: 0.9; max-width: 700px; margin: 0 auto; }
+        .breadcrumb { margin-top: 20px; font-size: 0.85rem; opacity: 0.7; }
+        .breadcrumb a { color: var(--accent-light); text-decoration: none; }
+        
+        .blog-post {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+        }
+        .blog-post h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+        .blog-meta {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .blog-post p { margin-bottom: 16px; color: var(--text-light); }
+        .blog-post ul { margin: 16px 0; padding-right: 20px; }
+        .blog-post li { margin-bottom: 10px; color: var(--text-light); }
+        .blog-post h3 {
+            color: var(--primary-dark);
+            font-size: 1.15rem;
+            margin: 20px 0 12px;
+        }
+        .blog-tag {
+            display: inline-block;
+            background: var(--bg-light);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 4px;
+        }
+        .read-more {
+            display: inline-block;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+        .read-more:hover { text-decoration: underline; }
+        
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: var(--white);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-box h3 { font-size: 1.4rem; margin-bottom: 16px; }
+        .cta-box .btn {
+            display: inline-block;
+            background: var(--white);
+            color: var(--primary);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+        .back-link {
+            display: inline-block;
+            margin: 30px 0;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .page-footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+        .page-footer a { color: var(--accent-light); text-decoration: none; }
+        
+        @media (max-width: 768px) {
+            .page-header h1 { font-size: 1.6rem; }
+            .blog-post { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="index.html">Home</a> / Blog</div>
+            <h1>Dermatology Blog | Skin Care Tips Kabul</h1>
+            <p>Expert advice on skin, hair, and nail health from Dr. Khatera Habib Wali</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="index.html" class="back-link">← Back to Main Site</a>
+
+        <article class="blog-post">
+            <h2>How to Treat Acne in Kabul: A Complete Guide</h2>
+            <div class="blog-meta">Dr. Khatera Habib Wali | Dermatologist Kabul | 2026</div>
+            <p>Acne is one of the most common skin conditions in Afghanistan, affecting both teenagers and adults. As the best dermatologist in Kabul, I see hundreds of acne patients every year. Here is my expert advice on treating acne effectively.</p>
+            
+            <h3>What Causes Acne?</h3>
+            <p>Acne is caused by:</p>
+            <ul>
+                <li>Excess oil (sebum) production</li>
+                <li>Clogged hair follicles</li>
+                <li>Bacteria growth</li>
+                <li>Inflammation</li>
+                <li>Hormonal changes</li>
+            </ul>
+            
+            <h3>Best Acne Treatment in Kabul</h3>
+            <p>At my clinic in Deh Afghanan, Kabul, I provide personalized acne treatment including:</p>
+            <ul>
+                <li><strong>Topical retinoids</strong> - Unclog pores and reduce inflammation</li>
+                <li><strong>Antibiotics</strong> - Kill bacteria and reduce redness</li>
+                <li><strong>Benzoyl peroxide</strong> - Kill bacteria and dry out pimples</li>
+                <li><strong>Chemical peels</strong> - Remove dead skin cells and unclog pores</li>
+                <li><strong>Hormonal therapy</strong> - For adult women with hormonal acne</li>
+            </ul>
+            
+            <h3>Home Care Tips for Acne</h3>
+            <ul>
+                <li>Wash your face twice daily with a gentle cleanser</li>
+                <li>Do not pick or squeeze pimples</li>
+                <li>Use oil-free moisturizer</li>
+                <li>Apply sunscreen daily</li>
+                <li>Avoid touching your face</li>
+            </ul>
+            
+            <span class="blog-tag">Acne Treatment</span>
+            <span class="blog-tag">Skin Care</span>
+            <span class="blog-tag">Kabul Dermatologist</span>
+        </article>
+
+        <article class="blog-post">
+            <h2>Hair Loss in Afghanistan: Causes and Treatment</h2>
+            <div class="blog-meta">Dr. Khatera Habib Wali | Dermatologist Kabul | 2026</div>
+            <p>Hair loss is a growing concern in Afghanistan. Many patients visit my clinic in Kabul seeking help for thinning hair and bald patches. As a dermatologist and professor at Kabul Medical University, I want to share my expertise on this topic.</p>
+            
+            <h3>Common Causes of Hair Loss in Afghanistan</h3>
+            <ul>
+                <li><strong>Nutritional deficiency</strong> - Lack of iron, zinc, biotin, and protein</li>
+                <li><strong>Stress</strong> - Physical and emotional stress can trigger hair loss</li>
+                <li><strong>Thyroid disorders</strong> - Hypothyroidism and hyperthyroidism</li>
+                <li><strong>Iron deficiency anemia</strong> - Very common in Afghan women</li>
+                <li><strong>Fungal infections</strong> - Scalp ringworm</li>
+                <li><strong>Genetic factors</strong> - Androgenetic alopecia</li>
+                <li><strong>Hormonal changes</strong> - After pregnancy, menopause</li>
+            </ul>
+            
+            <h3>Treatment Options at Our Clinic</h3>
+            <ul>
+                <li><strong>Trichoscopy</strong> - Advanced hair and scalp analysis</li>
+                <li><strong>PRP therapy</strong> - Platelet-rich plasma injections</li>
+                <li><strong>Medical therapy</strong> - Minoxidil, finasteride, supplements</li>
+                <li><strong>Nutritional counseling</strong> - Diet optimization for hair health</li>
+                <li><strong>Treatment of underlying conditions</strong> - Thyroid, anemia</li>
+            </ul>
+            
+            <span class="blog-tag">Hair Loss</span>
+            <span class="blog-tag">Alopecia Treatment</span>
+            <span class="blog-tag">Kabul</span>
+        </article>
+
+        <article class="blog-post">
+            <h2>Understanding Psoriasis: A Guide for Patients in Kabul</h2>
+            <div class="blog-meta">Dr. Khatera Habib Wali | Dermatologist Kabul | 2026</div>
+            <p>Psoriasis is a chronic autoimmune condition that causes rapid skin cell buildup, leading to scaling on the skin surface. As a dermatology specialist at Maiwand Teaching Hospital, I treat many psoriasis patients in Kabul.</p>
+            
+            <h3>What is Psoriasis?</h3>
+            <p>Psoriasis is NOT contagious. It is an autoimmune condition where the immune system attacks healthy skin cells, causing them to multiply too quickly. This results in thick, scaly patches on the skin.</p>
+            
+            <h3>Types of Psoriasis</h3>
+            <ul>
+                <li><strong>Plaque psoriasis</strong> - Most common, causes dry, itchy plaques</li>
+                <li><strong>Guttate psoriasis</strong> - Small, dot-like lesions</li>
+                <li><strong>Inverse psoriasis</strong> - Smooth, red patches in skin folds</li>
+                <li><strong>Pustular psoriasis</strong> - Pus-filled blisters</li>
+            </ul>
+            
+            <h3>Psoriasis Treatment in Kabul</h3>
+            <p>At my clinic, I provide evidence-based psoriasis treatment:</p>
+            <ul>
+                <li>Topical corticosteroids and vitamin D analogues</li>
+                <li>Phototherapy (UVB light treatment)</li>
+                <li>Systemic medications for severe cases</li>
+                <li>Lifestyle modifications</li>
+                <li>Stress management techniques</li>
+            </ul>
+            
+            <span class="blog-tag">Psoriasis</span>
+            <span class="blog-tag">Autoimmune Skin Disease</span>
+            <span class="blog-tag">Treatment</span>
+        </article>
+
+        <article class="blog-post">
+            <h2>Skin Pigmentation: Understanding and Treating Melasma in Kabul</h2>
+            <div class="blog-meta">Dr. Khatera Habib Wali | Dermatologist Kabul | 2026</div>
+            <p>Skin pigmentation disorders, especially melasma, are very common among women in Kabul. As a dermatologist specializing in skin rejuvenation, I see many patients seeking help for dark patches on their face.</p>
+            
+            <h3>What is Melasma?</h3>
+            <p>Melasma is a condition where dark patches appear on the face, usually on the cheeks, forehead, bridge of the nose, and chin. It is more common in women and is triggered by sun exposure, hormonal changes, and genetic factors.</p>
+            
+            <h3>Treatment Options</h3>
+            <ul>
+                <li><strong>Sun protection</strong> - The most important step</li>
+                <li><strong>Topical depigmenting agents</strong> - Hydroquinone, kojic acid</li>
+                <li><strong>Chemical peels</strong> - Glycolic acid, salicylic acid peels</li>
+                <li><strong>Laser treatment</strong> - For stubborn pigmentation</li>
+                <li><strong>Combination therapy</strong> - Multiple treatments together</li>
+            </ul>
+            
+            <span class="blog-tag">Melasma</span>
+            <span class="blog-tag">Pigmentation</span>
+            <span class="blog-tag">Skin Brightening</span>
+        </article>
+
+        <article class="blog-post">
+            <h2>Eczema in Children: A Parent's Guide to Treatment in Kabul</h2>
+            <div class="blog-meta">Dr. Khatera Habib Wali | Dermatologist Kabul | 2026</div>
+            <p>Eczema (atopic dermatitis) is one of the most common skin conditions in children. As a dermatology specialist with experience in pediatric dermatology, I want to help parents understand and manage this condition.</p>
+            
+            <h3>Signs of Eczema in Children</h3>
+            <ul>
+                <li>Dry, itchy skin</li>
+                <li>Red, inflamed patches</li>
+                <li>Small bumps that may leak fluid</li>
+                <li>Thickened, scaly skin</li>
+                <li>Skin that is sensitive to touch</li>
+            </ul>
+            
+            <h3>How to Manage Eczema</h3>
+            <ul>
+                <li><strong>Moisturize regularly</strong> - Use fragrance-free moisturizers</li>
+                <li><strong>Avoid triggers</strong> - Certain soaps, detergents, foods</li>
+                <li><strong>Keep skin cool</strong> - Avoid overheating</li>
+                <li><strong>Use mild cleansers</strong> - Soap-free wash products</li>
+                <li><strong>Medical treatment</strong> - Topical corticosteroids when needed</li>
+            </ul>
+            
+            <span class="blog-tag">Eczema</span>
+            <span class="blog-tag">Pediatric Dermatology</span>
+            <span class="blog-tag">Children Skin Care</span>
+        </article>
+
+        <div class="cta-box">
+            <h3>Have a Skin Concern? Consult Dr. Khatera Habib Wali</h3>
+            <p>Expert dermatological care in Kabul, Afghanistan</p>
+            <a href="https://wa.me/93796631315" class="btn">WhatsApp: +93 796 631 315</a>
+        </div>
+    </main>
+
+    <footer class="page-footer">
+        <div class="container">
+            <p>© 2026 Dr. Khatera Habib Wali | Dermatology Blog | <a href="index.html">Back to Main Site</a></p>
+        </div>
+    </footer>
+</body>
+</html>
